@@ -55,6 +55,10 @@ mod tests{
     }
     #[test]
     fn test_4(){
-        assert_eq!(length_of_longest_substring("aab"),2_usize)
+        assert_eq!(length_of_longest_substring("aa b"),3_usize)
+    }
+    #[test]
+    fn test_5(){
+        assert_eq!(length_of_longest_substring("中文字符串中文"),5_usize)
     }
 }
