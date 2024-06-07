@@ -1,3 +1,4 @@
 fn main() {
-    println!("{}", 2^32);
+    let string:String = "abcabc".to_string();
+    println!("{}", string.find("c").unwrap());
 }
