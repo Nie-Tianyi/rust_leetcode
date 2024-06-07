@@ -1,4 +1,4 @@
-/// a robust algorithm that convert an IPv4 String to a u32 number
+/// a robust algorithm that convert an IPv4 String to an u32 number
 /// # example
 /// ```
 /// use rust_env::ipv4_string_to_number::convert_ipv4_str_to_number;
@@ -25,7 +25,7 @@ pub fn convert_ipv4_str_to_number(ip_addr: &str) -> Result<u32, &str> {
                 array.push(inter_str.parse().unwrap());
                 // the number should belong to [0,255], otherwise it is invalid
                 if !(array[index] <= 255_u32) {
-                    return Err("invalid IP address string");
+                    return Err("invalid IPv4 address");
                 }
                 // clear string
                 inter_str.clear();
@@ -39,10 +39,10 @@ pub fn convert_ipv4_str_to_number(ip_addr: &str) -> Result<u32, &str> {
     array.push(inter_str.parse().unwrap());
     // the number should belong to [0,255], otherwise it is invalid
     if !(array[index] <= 255_u32) {
-        return Err("invalid IP address");
+        return Err("invalid IPv4 address");
     }
     if array.len() != 4 {
-        return Err("invalid IP address");
+        return Err("invalid IPv4 address");
     }
     // convert the array to an u32 Integer
     let res = (array[0] << 24) + (array[1] << 16) + (array[2] << 8) + (array[3] << 0);
