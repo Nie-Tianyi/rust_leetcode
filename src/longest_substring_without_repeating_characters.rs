@@ -1,6 +1,8 @@
 /// Given a string s, find the length of the longest substring without repeating characters.
 ///
 /// LeetCode Link:[3.longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+///
+/// todo: cannot handle non-english characters. (because UTF-8 encoded)
 
 pub fn length_of_longest_substring(s: &str) -> usize {
     // init a variable that store the global maximum
@@ -23,6 +25,7 @@ pub fn length_of_longest_substring(s: &str) -> usize {
                     max_length = substring.len()
                 };
                 // remove the characters
+                // todo: if the character is a chinese character, it would panic
                 substring.drain(0..=index);
                 substring.push(character);
             }

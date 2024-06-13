@@ -15,10 +15,10 @@ pub fn convert_ipv4_str_to_number(ip_addr: &str) -> Result<u32, &str> {
     // init index of the array
     let mut index = 0_usize;
     // convert the ip address to an u32 array without "." e.g. [127_u32,0_u32,0_u32,1_u32]
-    for char in ip_addr.chars() {
-        match char {
+    for character in ip_addr.chars() {
+        match character {
             // if it matches a decimal number
-            '0'..='9' => inter_str.push(char),
+            '0'..='9' => inter_str.push(character),
             // if it matches a "."
             '.' => {
                 // convert string to number
@@ -32,7 +32,7 @@ pub fn convert_ipv4_str_to_number(ip_addr: &str) -> Result<u32, &str> {
                 // update index
                 index += 1_usize;
             }
-            // if it doesn't match any character, neglect it.
+            // if it doesn't match any number, neglect it.
             _ => (),
         }
     }
