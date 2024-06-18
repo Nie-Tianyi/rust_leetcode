@@ -17,10 +17,10 @@ use std::cmp::Ordering;
 /// ```
 pub fn binary_search<T: Ord>(sorted_array: &[T], target: T) -> Option<usize> {
     // initialize two pointers, point to the start and the end of the array
-    let (mut low,mut high) = (0_usize, sorted_array.len());
+    let (mut low, mut high) = (0_usize, sorted_array.len());
     while low <= high {
         // calculate the mid-pointers
-        let mid = (low + high)/2_usize;
+        let mid = (low + high) / 2_usize;
         match sorted_array[mid].cmp(&target) {
             Ordering::Less => {
                 // if the mid-point's value is less than the target
@@ -42,12 +42,13 @@ pub fn binary_search<T: Ord>(sorted_array: &[T], target: T) -> Option<usize> {
 }
 
 #[cfg(test)]
-mod tests{
+mod tests {
     use super::*;
+
     #[test]
-    fn test_binary_search(){
-        let sorted_array = vec![2,3,8,9];
-        assert_eq!(binary_search(&sorted_array,9),Some(3));
-        assert_eq!(binary_search(&sorted_array,4),None);
+    fn test_binary_search() {
+        let sorted_array = vec![2, 3, 8, 9];
+        assert_eq!(binary_search(&sorted_array, 9), Some(3));
+        assert_eq!(binary_search(&sorted_array, 4), None);
     }
 }
