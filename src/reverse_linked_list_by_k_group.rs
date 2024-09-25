@@ -1,5 +1,5 @@
 // Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
+#[derive(PartialEq, Eq, Clone, Debug, Default)]
 pub struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>,
@@ -15,7 +15,7 @@ impl ListNode {
     }
 }
 
-pub fn reverse_k_group(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
+pub fn reverse_k_group(_head: Option<Box<ListNode>>, _k: i32) -> Option<Box<ListNode>> {
     unimplemented!()
 }
 

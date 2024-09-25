@@ -9,6 +9,7 @@ pub struct ListNode {
 
 impl ListNode {
     #[inline]
+    #[allow(dead_code)]
     fn new(val: i32) -> Self {
         ListNode {
             next: None,
@@ -17,7 +18,7 @@ impl ListNode {
     }
 }
 
-pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+pub fn reverse_list(_head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     unimplemented!();
     // // if the head is referring to None, return None directly
     // let first_node = match head{

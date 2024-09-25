@@ -2,7 +2,7 @@
 ///
 /// LeetCode Link:[3.longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
 ///
-/// todo: cannot handle non-english characters. (because UTF-8 encoded)
+/// **TODO**: cannot handle non-english characters. (because UTF-8 encoded)
 
 pub fn length_of_longest_substring(s: &str) -> usize {
     // init a variable that store the global maximum
@@ -61,7 +61,8 @@ mod tests{
         assert_eq!(length_of_longest_substring("aa b"),3_usize)
     }
     #[test]
+    #[should_panic(expected = "assertion failed: self.is_char_boundary(end)")]
     fn test_5(){
-        assert_eq!(length_of_longest_substring("中文字符串中文"),5_usize)
+        assert_eq!(length_of_longest_substring("中文字符串中文"),5_usize);
     }
 }

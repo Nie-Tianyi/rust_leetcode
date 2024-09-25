@@ -1,11 +1,10 @@
 /// a robust algorithm that convert an IPv4 String to an u32 number
 /// # example
 /// ```
-/// use rust_env::ipv4_string_to_number::convert_ipv4_str_to_number;
+/// use rust_leetcode::ipv4_string_to_number::convert_ipv4_str_to_number;
 /// let res = convert_ipv4_str_to_number("192.168.1.1");
 /// assert_eq!(res.unwrap(), 3232235777_u32);
 /// ```
-
 
 pub fn convert_ipv4_str_to_number(ip_addr: &str) -> Result<u32, &str> {
     // init an array that store result after split
@@ -24,7 +23,7 @@ pub fn convert_ipv4_str_to_number(ip_addr: &str) -> Result<u32, &str> {
                 // convert string to number
                 array.push(inter_str.parse().unwrap());
                 // the number should belong to [0,255], otherwise it is invalid
-                if !(array[index] <= 255_u32) {
+                if array[index] > 255_u32 {
                     return Err("invalid IPv4 address");
                 }
                 // clear string
@@ -38,14 +37,14 @@ pub fn convert_ipv4_str_to_number(ip_addr: &str) -> Result<u32, &str> {
     }
     array.push(inter_str.parse().unwrap());
     // the number should belong to [0,255], otherwise it is invalid
-    if !(array[index] <= 255_u32) {
+    if array[index] > 255_u32 {
         return Err("invalid IPv4 address");
     }
     if array.len() != 4 {
         return Err("invalid IPv4 address");
     }
     // convert the array to an u32 Integer
-    let res = (array[0] << 24) + (array[1] << 16) + (array[2] << 8) + (array[3] << 0);
+    let res = (array[0] << 24) + (array[1] << 16) + (array[2] << 8) + array[3]; // the same as `array[3] << 0`
     Ok(res)
 }
 
