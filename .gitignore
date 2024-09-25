@@ -1,0 +1,25 @@
+# Ignore compiled files
+/target/
+
+# Ignore build artifacts
+**/*.rs.bk
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.iml
+
+# Ignore Cargo.lock if it's a library
+# Cargo.lock
+
+# Ignore node_modules if using Node.js for frontend
+node_modules/
+
+# Ignore MacOS specific files
+.DS_Store
+
+# Ignore byebug command history file.
+.byebug_history
+
+# Ignore RustRover specific files
+.rustrover/
