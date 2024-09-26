@@ -16,7 +16,9 @@ impl ListNode {
 /// 例如： [10, 5, 6] -> [10, 5, 5, 1, 6]
 ///                          ^     ^
 /// 复杂度要求： O(n)/O(1)
-pub fn insert_greatest_common_divisors(head:&mut Option<Box<ListNode>>) ->&mut Option<Box<ListNode>> {
+pub fn insert_greatest_common_divisors(
+    head: &mut Option<Box<ListNode>>,
+) -> &mut Option<Box<ListNode>> {
     // 初始化指针指向头节点
     let mut node = head.as_mut();
 
@@ -38,14 +40,17 @@ pub fn insert_greatest_common_divisors(head:&mut Option<Box<ListNode>>) ->&mut O
 }
 
 // 在给定节点后插入一个新的节点
-fn insert_node(node:&mut Option<Box<ListNode>>, value: i32) ->&mut Option<Box<ListNode>> {
+fn insert_node(node: &mut Option<Box<ListNode>>, value: i32) -> &mut Option<Box<ListNode>> {
     // 如果是node是None，直接返回
     // 如果不是
     if let Some(n) = node.as_mut() {
         // 将下一个节点暂时储存起来
         let next_node = n.next.take();
         // 新建中间的节点
-        let new_node = Some(Box::new(ListNode { val: value, next: next_node }));
+        let new_node = Some(Box::new(ListNode {
+            val: value,
+            next: next_node,
+        }));
         // 将当前节点和下一个节点连接起来
         n.next = new_node;
     }
@@ -53,7 +58,7 @@ fn insert_node(node:&mut Option<Box<ListNode>>, value: i32) ->&mut Option<Box<Li
 }
 
 // 短除法求最大公因数
-fn greatest_common_divisor(a:i32,b:i32) -> i32 {
+fn greatest_common_divisor(a: i32, b: i32) -> i32 {
     if b == 0 {
         a.abs()
     } else {
@@ -62,11 +67,11 @@ fn greatest_common_divisor(a:i32,b:i32) -> i32 {
 }
 
 #[cfg(test)]
-mod tests{
+mod tests {
     use super::*;
     #[test]
-    fn test_gcd(){
-        let gcd = greatest_common_divisor(3_i32,12_i32);
+    fn test_gcd() {
+        let gcd = greatest_common_divisor(3_i32, 12_i32);
         assert_eq!(gcd, 3_i32)
     }
 }

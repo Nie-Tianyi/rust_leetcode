@@ -11,10 +11,7 @@ impl ListNode {
     #[inline]
     #[allow(dead_code)]
     fn new(val: i32) -> Self {
-        ListNode {
-            next: None,
-            val,
-        }
+        ListNode { next: None, val }
     }
 }
 
@@ -44,11 +41,10 @@ pub fn reverse_list(_head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
 }
 
 #[cfg(test)]
-mod tests{
+mod tests {
     use super::*;
     #[test]
-    fn test_1(){
-        assert_eq!(1,1);
+    fn test_1() {
+        assert_eq!(1, 1);
     }
-
 }

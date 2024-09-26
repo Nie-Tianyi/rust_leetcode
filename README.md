@@ -1,1 +1,2 @@
-# Leetcode Practise Rust Ver.
+# Leetcode Practise Rust Ver. Notes
+
