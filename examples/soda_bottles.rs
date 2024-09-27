@@ -11,7 +11,7 @@ fn main() {
 
     // collect all the user inputs
     for line in stdin.lock().lines() {
-        let ll = line.unwrap();
+        let ll = line.unwrap_or("0".to_string());
         let num = ll.parse::<i32>().unwrap_or(0);
         if num != 0 {
             res.push(num);
