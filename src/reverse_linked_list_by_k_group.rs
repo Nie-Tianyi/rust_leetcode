@@ -18,6 +18,7 @@ pub fn reverse_k_group(_head: Option<Box<ListNode>>, _k: i32) -> Option<Box<List
 
 #[cfg(test)]
 mod tests {
+    #[allow(unused_imports)]
     use super::*;
     #[test]
     fn test_1() {

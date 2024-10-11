@@ -42,6 +42,7 @@ pub fn reverse_list(_head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
 
 #[cfg(test)]
 mod tests {
+    #[allow(unused_imports)]
     use super::*;
     #[test]
     fn test_1() {
