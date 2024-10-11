@@ -10,6 +10,5 @@ fn main() {
             res.push(ch);
         }
     }
-    println!("{}",res)
+    println!("{}", res)
 }
-

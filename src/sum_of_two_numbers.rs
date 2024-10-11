@@ -72,38 +72,29 @@ mod tests {
 
     #[test]
     fn test() {
-        let l1 = ListNode{
+        let l1 = ListNode {
             val: 2,
             next: Some(Box::new(ListNode {
                 val: 4,
-                next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: None,
-                }))
-            }))
+                next: Some(Box::new(ListNode { val: 3, next: None })),
+            })),
         };
 
-        let l2 = ListNode{
+        let l2 = ListNode {
             val: 5,
             next: Some(Box::new(ListNode {
                 val: 6,
-                next: Some(Box::new(ListNode {
-                    val: 4,
-                    next: None,
-                }))
-            }))
+                next: Some(Box::new(ListNode { val: 4, next: None })),
+            })),
         };
 
         assert_eq!(
-            Solution::add_two_numbers(Some(Box::new(l1)),Some(Box::new(l2))),
-            Some(Box::new(ListNode{
+            Solution::add_two_numbers(Some(Box::new(l1)), Some(Box::new(l2))),
+            Some(Box::new(ListNode {
                 val: 7,
                 next: Some(Box::new(ListNode {
                     val: 0,
-                    next: Some(Box::new(ListNode {
-                        val: 8,
-                        next: None,
-                    }))
+                    next: Some(Box::new(ListNode { val: 8, next: None }))
                 }))
             }))
         )

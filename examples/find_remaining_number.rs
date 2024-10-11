@@ -8,7 +8,8 @@ use std::io::BufRead;
 fn main() {
     let stdin = io::stdin();
     let mut lines = stdin.lock().lines();
-    let num = lines.next()
+    let num = lines
+        .next()
         .unwrap_or(Ok("0".to_string()))
         .unwrap_or("0".to_string())
         .parse::<usize>()
@@ -35,7 +36,7 @@ fn pop_elements(v: &mut Vec<usize>) -> usize {
     let mut index = 0;
     let mut res = 0;
     loop {
-        if v.len() <=2 {
+        if v.len() <= 2 {
             return res;
         }
         if (index + 1) % 3 == 0 {
