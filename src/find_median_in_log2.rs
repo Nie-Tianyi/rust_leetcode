@@ -1,7 +1,7 @@
 pub struct Solution;
 impl Solution {
     pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
-        let (k, is_biased) = find_k(nums1.len(), nums2.len());
+        let (_k, _is_biased) = find_k(nums1.len(), nums2.len());
         unimplemented!()
     }
 }

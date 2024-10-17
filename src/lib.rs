@@ -7,3 +7,4 @@ pub mod number_pairs;
 pub mod reverse_linked_list;
 pub mod reverse_linked_list_by_k_group;
 pub mod sum_of_two_numbers;
+pub mod longest_palindrome;
