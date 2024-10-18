@@ -9,10 +9,13 @@ impl Solution {
             return s;
         }
         let chars = s.chars().collect::<Vec<char>>(); // &['b','b']
-        for i in 0..chars.len() { // i=0,i=1
+        for i in 0..chars.len() {
+            // i=0,i=1
             let window_size = chars.len() - i; // window_size = 2
-            for j in 0..=i { // j = 0
-                if is_palindrome(&chars[j..j + window_size]) { // [0..2]
+            for j in 0..=i {
+                // j = 0
+                if is_palindrome(&chars[j..j + window_size]) {
+                    // [0..2]
                     return chars[j..j + window_size].iter().collect();
                 }
             }
@@ -55,5 +58,13 @@ mod tests {
             Solution::longest_palindrome("bb".to_string()),
             "bb".to_string()
         );
+    }
+}
+
+struct Solution2;
+// 扩散法
+impl Solution2 {
+    pub fn longest_palindrome(s: String) -> String {
+        unimplemented!()
     }
 }
