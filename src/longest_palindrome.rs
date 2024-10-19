@@ -64,7 +64,7 @@ mod tests {
 struct Solution2;
 // 扩散法
 impl Solution2 {
-    pub fn longest_palindrome(s: String) -> String {
+    pub fn longest_palindrome(_s: String) -> String {
         unimplemented!()
     }
 }
