@@ -25,8 +25,8 @@ impl Solution {
         for chr in s.chars() {
             res[i].push(chr);
             match reverse_flag {
-                true => { i -= 1 },
-                false => { i += 1 }
+                true => i -= 1,
+                false => i += 1,
             }
             if i == num_rows - 1 {
                 reverse_flag = true;
