@@ -5,6 +5,8 @@ use std::io::BufRead;
 /// 以 8 个数 (N=7) 为例 :｛ 0，1，2，3，4，5，6，7 ｝，0 -> 1 -> 2 (删除)
 /// -> 3 -> 4 -> 5 (删除) -> 6 -> 7 -> 0 (删除),如此循环直到
 /// 最后一个数被删除。
+///
+// 3 6
 fn main() {
     let stdin = io::stdin();
     let mut lines = stdin.lock().lines();

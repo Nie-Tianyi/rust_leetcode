@@ -12,3 +12,4 @@ mod reverse_linked_list;
 mod reverse_linked_list_by_k_group;
 mod sum_of_two_numbers;
 mod z_converter;
+mod trapping_rain_water;
