@@ -18,7 +18,7 @@ fn find_ans(v: &[bool]) -> usize {
             (true, true) => 2,
         };
     }
-    find_ans(&v[0..7]) + find_ans()
+    find_ans(&v[0..7]) + find_ans(&v[7..])
 }
 
 //给定定点，找到以其为定点的每一个子树

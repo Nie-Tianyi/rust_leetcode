@@ -4,7 +4,7 @@ use std::io::BufRead;
 
 fn main() {
     // please define the Rust input here.
-    let (functions, relations, max_capacity) = get_inputs();
+    let (_functions, _relations, _max_capacity) = get_inputs();
     // please finish the function body here.
 
     // please define the Rust output here.
