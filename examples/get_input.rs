@@ -7,6 +7,6 @@ fn main() {
 
     for line in lines {
         let line = line.expect("unexpected String");
-        println!("{}",line);
+        println!("{}", line);
     }
 }

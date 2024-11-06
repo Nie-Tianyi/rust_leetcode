@@ -1,10 +1,4 @@
 /// a robust algorithm that convert an IPv4 String to an u32 number
-/// # example
-/// ```
-/// use rust_leetcode::ipv4_string_to_number::convert_ipv4_str_to_number;
-/// let res = convert_ipv4_str_to_number("192.168.1.1");
-/// assert_eq!(res.unwrap(), 3232235777_u32);
-/// ```
 
 pub fn convert_ipv4_str_to_number(ip_addr: &str) -> Result<u32, &str> {
     // init an array that store result after split

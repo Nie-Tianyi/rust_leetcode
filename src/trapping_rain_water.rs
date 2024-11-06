@@ -39,9 +39,8 @@ fn backward(height: &[i32]) -> Vec<i32> {
     let mut bar = 0_i32;
     for &i in height.iter().rev() {
         bar = std::cmp::max(i, bar);
-        res.push(bar);
+        res.insert(0, bar);
     }
-    res.reverse();
     res
 }
 

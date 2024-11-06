@@ -30,7 +30,6 @@ fn iter_relations(re: Vec<String>) {
             unimplemented!();
         }
     }
-
 }
 
 // returns
