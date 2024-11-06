@@ -119,7 +119,7 @@ mod tests {
     }
 
     #[test]
-    fn test_solution() {
+    fn test_abandoned_solution() {
         // 有问题的解法
         assert_eq!(
             AbandonedSolution::trap(vec![0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]),
@@ -129,7 +129,7 @@ mod tests {
     }
 
     #[test]
-    fn test_sol() {
+    fn test_solution() {
         assert_eq!(Solution::trap(vec![0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]), 6);
         assert_eq!(Solution::trap(vec![4, 2, 0, 3, 2, 5]), 9);
     }
