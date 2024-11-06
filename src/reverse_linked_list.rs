@@ -15,16 +15,23 @@ impl ListNode {
     }
 }
 
-pub fn reverse_list(_head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    unimplemented!();
+pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    reverse_node(None, head)
 }
 
-#[cfg(test)]
-mod tests {
-    #[allow(unused_imports)]
-    use super::*;
-    #[test]
-    fn test_1() {
-        assert_eq!(1, 1);
+fn reverse_node(prev: Option<Box<ListNode>>, curr: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    match curr {
+        None => prev,
+        Some(node) => {
+            let next = node.next;
+
+            reverse_node(
+                Some(Box::new(ListNode {
+                    val: node.val,
+                    next: prev,
+                })),
+                next,
+            )
+        }
     }
 }
