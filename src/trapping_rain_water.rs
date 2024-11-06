@@ -2,6 +2,62 @@ struct Solution;
 
 impl Solution {
     pub fn trap(height: Vec<i32>) -> i32 {
+        let forward = forward(height.as_slice());
+        let backward = backward(height.as_slice());
+
+        let mut res = 0_i32;
+        for i in 0..height.len() {
+            let horizon = std::cmp::min(forward[i], backward[i]);
+            res += horizon - height[i];
+        }
+        res
+    }
+}
+
+#[inline]
+fn forward(height: &[i32]) -> Vec<i32> {
+    let mut res = Vec::new();
+    let mut bar = 0_i32;
+    for &i in height {
+        bar = std::cmp::max(i, bar);
+        res.push(bar);
+    }
+    res
+}
+
+#[cfg(test)]
+#[test]
+fn test_forward() {
+    assert_eq!(
+        forward(vec![4, 2, 0, 3, 2, 5].as_slice()),
+        vec![4, 4, 4, 4, 4, 5]
+    )
+}
+#[inline]
+fn backward(height: &[i32]) -> Vec<i32> {
+    let mut res = Vec::new();
+    let mut bar = 0_i32;
+    for &i in height.iter().rev() {
+        bar = std::cmp::max(i, bar);
+        res.push(bar);
+    }
+    res.reverse();
+    res
+}
+
+#[cfg(test)]
+#[test]
+fn test_backward() {
+    assert_eq!(
+        backward(vec![4, 2, 0, 3, 2, 5].as_slice()),
+        vec![5, 5, 5, 5, 5, 5]
+    )
+}
+
+struct AbandonedSolution;
+
+impl AbandonedSolution {
+    pub fn trap(height: Vec<i32>) -> i32 {
         let mut res = 0;
         let mut prev_border_index = None;
 
@@ -65,6 +121,16 @@ mod tests {
 
     #[test]
     fn test_solution() {
+        // 有问题的解法
+        assert_eq!(
+            AbandonedSolution::trap(vec![0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]),
+            6
+        );
+        assert_ne!(AbandonedSolution::trap(vec![4, 2, 0, 3, 2, 5]), 9);
+    }
+
+    #[test]
+    fn test_sol() {
         assert_eq!(Solution::trap(vec![0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]), 6);
         assert_eq!(Solution::trap(vec![4, 2, 0, 3, 2, 5]), 9);
     }
