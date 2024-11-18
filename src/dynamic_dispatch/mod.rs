@@ -1,4 +1,3 @@
-mod climbing_stairs;
 /// # 动态规划：
 ///
 /// ### 什么是动态规划：
@@ -13,4 +12,5 @@ mod climbing_stairs;
 /// 3. dp数组因该如何初始化
 /// 4. 遍历顺序
 /// 5. 打印二维数组 Debug
+mod climbing_stairs;
 mod fibonacci_number;
