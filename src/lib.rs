@@ -1,3 +1,4 @@
+mod dynamic_dispatch;
 mod find_median;
 mod find_median_in_log2;
 mod insert_greatest_common_divisor;
