@@ -14,3 +14,5 @@
 /// 5. 打印二维数组 Debug
 mod climbing_stairs;
 mod fibonacci_number;
+mod min_cost_climbing_stairs;
+mod unique_paths;
