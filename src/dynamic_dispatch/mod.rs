@@ -16,3 +16,4 @@ mod climbing_stairs;
 mod fibonacci_number;
 mod min_cost_climbing_stairs;
 mod unique_paths;
+mod unique_paths_2;
