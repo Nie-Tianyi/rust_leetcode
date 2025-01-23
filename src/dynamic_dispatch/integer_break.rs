@@ -4,10 +4,11 @@
 /// 2. 状态转移方程：`dp[i] = max(dp[i-1] * 1, dp[i-2] * 2,...,dp[1] * (i-1), (i-1) * 1, (i-2) * 2,..., 1 * (i-1))`
 /// 3. 初始化： `dp[0]`和`dp[1]`没有意义，都初始化为 0
 /// 4. 从 0 到 n 遍历
-
+#[allow(dead_code)]
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn integer_break(n: i32) -> i32 {
         let n = n as usize;
         let mut dp = vec![0; n + 1];

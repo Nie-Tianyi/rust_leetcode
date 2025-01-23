@@ -6,9 +6,10 @@
 /// 2. 递推公式为：`dp[i] = dp[i-1] + dp[i-2]`
 /// 3. 初始化： 数组前两个元素为1，即`dp[0] = 1`, `dp[1] = 1`
 /// 4. 遍历顺序，从前往后
-
+#[allow(dead_code)]
 struct Solution;
 impl Solution {
+    #[allow(dead_code)]
     pub fn fib(n: i32) -> i32 {
         // 特殊规定F(0) = 0
         if n == 0 {

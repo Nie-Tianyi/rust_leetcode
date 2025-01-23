@@ -3,7 +3,7 @@
 /// LeetCode Link:[3.longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
 ///
 /// **TODO**: cannot handle non-english characters. (because UTF-8 encoded)
-
+#[allow(dead_code)]
 pub fn length_of_longest_substring(s: &str) -> usize {
     // init a variable that store the global maximum
     let mut max_length = 0_usize;

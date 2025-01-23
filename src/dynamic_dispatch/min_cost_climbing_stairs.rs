@@ -3,9 +3,11 @@
 /// 2. 状态转移方程为：`dp[i] = min(dp[i-2] + cost[i-2], dp[i-1] + cost[i-1])`
 /// 3. 初始化数组为 `[0,0,...]`, 因为可以选择从零或者一开始爬，因此`dp[0] = 0, dp[1] = 0`
 /// 4. 遍历顺序，从前往后遍历
+#[allow(dead_code)]
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn min_cost_climbing_stairs(cost: Vec<i32>) -> i32 {
         let len = cost.len() + 1;
         let top = cost.len();

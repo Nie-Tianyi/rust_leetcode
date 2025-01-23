@@ -22,10 +22,11 @@ fn find_ans(v: &[bool]) -> usize {
 }
 
 //给定定点，找到以其为定点的每一个子树
+#[allow(dead_code)]
 fn find_subtree(v: Vec<bool>, pivot: usize) -> Vec<bool> {
     let mut res = Vec::new();
     let i = pivot;
-    while 2 * i + 1 <= v.len() {
+    while 2 * i < v.len() {
         res.push(v[2 * i + 1]);
     }
 

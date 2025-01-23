@@ -15,6 +15,7 @@ impl ListNode {
     }
 }
 
+#[allow(dead_code)]
 pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     reverse_node(None, head)
 }

@@ -1,6 +1,8 @@
 use std::cmp::PartialEq;
-
+#[allow(dead_code)]
 struct Solution;
+
+#[allow(dead_code)]
 #[derive(PartialEq, Debug)]
 enum Stage {
     Flag,
@@ -8,12 +10,14 @@ enum Stage {
     Done,
 }
 #[derive(Debug)]
+#[allow(dead_code)]
 enum Flag {
     Positive,
     Negative,
 }
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn my_atoi(s: String) -> i32 {
         let (res_vec, flag) = number_extractor(s);
         converter(res_vec, flag)
@@ -41,7 +45,7 @@ fn converter(mut res_vec: Vec<i32>, flag: Flag) -> i32 {
                 }
                 res = res
                     .checked_add(y.unwrap())
-                    .unwrap_or_else(|| return i32::MAX);
+                    .unwrap_or(i32::MAX);
             }
         }
         Flag::Negative => {
@@ -55,7 +59,7 @@ fn converter(mut res_vec: Vec<i32>, flag: Flag) -> i32 {
                 if y.is_none() {
                     return i32::MIN;
                 }
-                res = res.checked_sub(y.unwrap()).unwrap_or_else(|| i32::MIN);
+                res = res.checked_sub(y.unwrap()).unwrap_or(i32::MIN);
             }
         }
     }

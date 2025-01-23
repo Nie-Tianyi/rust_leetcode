@@ -11,6 +11,7 @@ struct Solution;
 ///
 /// 请你实现这个将字符串进行指定行数变换的函数：
 impl Solution {
+    #[allow(dead_code)]
     pub fn convert(s: String, num_rows: i32) -> String {
         if num_rows <= 0 {
             panic!("invalid nums_rows");

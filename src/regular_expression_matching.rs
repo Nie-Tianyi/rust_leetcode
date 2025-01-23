@@ -1,6 +1,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(unreachable_code)]
     pub fn is_match(s: String, p: String) -> bool {
         let patterns = Pattern::pattern_lexical_analysis(p);
         let mut chars = s.chars().peekable();

@@ -23,7 +23,7 @@ fn main() {
         if n.is_err() {
             continue;
         }
-        res += n.unwrap() << 4 * index;
+        res += n.unwrap() << (4 * index);
         index += 1;
     }
 

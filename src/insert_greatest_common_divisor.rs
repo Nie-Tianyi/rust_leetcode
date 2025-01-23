@@ -16,6 +16,7 @@ impl ListNode {
 /// 例如： [10, 5, 6] -> [10, 5, 5, 1, 6]
 ///                          ^     ^
 /// 复杂度要求： O(n)/O(1)
+#[allow(dead_code)]
 pub fn insert_greatest_common_divisors(
     head: &mut Option<Box<ListNode>>,
 ) -> &mut Option<Box<ListNode>> {

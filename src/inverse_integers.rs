@@ -1,6 +1,8 @@
+#[allow(dead_code)]
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn reverse(x: i32) -> i32 {
         let mut x = x.to_string();
         let flag = if x.starts_with("-") {

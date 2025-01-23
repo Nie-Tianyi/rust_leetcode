@@ -1,6 +1,8 @@
+#[allow(dead_code)]
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
         let v = merge_sorted_array(nums1, nums2);
         find_median(v)

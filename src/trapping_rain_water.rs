@@ -1,6 +1,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn trap(height: Vec<i32>) -> i32 {
         let forward = forward(height.as_slice());
         let backward = backward(height.as_slice());
@@ -56,6 +57,7 @@ fn test_backward() {
 struct AbandonedSolution;
 
 impl AbandonedSolution {
+    #[allow(dead_code)]
     pub fn trap(height: Vec<i32>) -> i32 {
         let mut res = 0;
         let mut prev_border_index = None;

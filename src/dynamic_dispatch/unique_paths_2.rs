@@ -6,10 +6,11 @@
 /// `obstacle_grid[i][j-1] != 1`,
 /// 3. 初始化：`dp[0][0] = 1`
 /// 4. 从上到下，从左到右遍历
-
+#[allow(dead_code)]
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn unique_paths_with_obstacles(obstacle_grid: Vec<Vec<i32>>) -> i32 {
         if obstacle_grid[0][0] == 1 {
             return 0;

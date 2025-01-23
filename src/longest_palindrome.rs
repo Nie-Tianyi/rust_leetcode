@@ -1,9 +1,11 @@
+#[allow(dead_code)]
 struct Solution;
 
 /// palindrome 回文字符串——从前读，从后读一样 e.g. bad
 /// 找到给定字符串中最长的回文子字符串
 impl Solution {
     // 广度优先暴力搜索 时间复杂度 O(n^3), 空间复杂度 O(1)
+    #[allow(dead_code)]
     pub fn longest_palindrome(s: String) -> String {
         if s.len() < 2 {
             return s;
@@ -24,7 +26,7 @@ impl Solution {
         chars[0].to_string()
     }
 }
-
+#[allow(dead_code)]
 fn is_palindrome(chars: &[char]) -> bool {
     let len = chars.len();
     for i in 0..len / 2 {
@@ -34,6 +36,17 @@ fn is_palindrome(chars: &[char]) -> bool {
     }
     true
 }
+
+#[allow(dead_code)]
+struct Solution2;
+// 扩散法
+impl Solution2 {
+    #[allow(dead_code)]
+    pub fn longest_palindrome(_s: String) -> String {
+        unimplemented!()
+    }
+}
+
 
 #[cfg(test)]
 mod tests {
@@ -58,13 +71,5 @@ mod tests {
             Solution::longest_palindrome("bb".to_string()),
             "bb".to_string()
         );
-    }
-}
-
-struct Solution2;
-// 扩散法
-impl Solution2 {
-    pub fn longest_palindrome(_s: String) -> String {
-        unimplemented!()
     }
 }

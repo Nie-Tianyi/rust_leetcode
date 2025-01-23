@@ -10,6 +10,7 @@ fn main() {
     // please define the Rust output here.
 }
 
+#[allow(dead_code)]
 fn iter_relations(re: Vec<String>) {
     let mut call_relationship: HashMap<String, Vec<String>> = HashMap::new();
     let relation = re.clone();
@@ -17,7 +18,7 @@ fn iter_relations(re: Vec<String>) {
         let mut r = r.split_ascii_whitespace();
         let caller = r.next().unwrap().to_string();
         let mut callees = Vec::new();
-        while let Some(callee) = r.next() {
+        for callee in r {
             callees.push(callee.to_string())
         }
         call_relationship.insert(caller, callees);

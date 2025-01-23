@@ -1,5 +1,5 @@
 /// a robust algorithm that convert an IPv4 String to an u32 number
-
+#[allow(dead_code)]
 pub fn convert_ipv4_str_to_number(ip_addr: &str) -> Result<u32, &str> {
     // init an array that store result after split
     let mut array: Vec<u32> = Vec::new();

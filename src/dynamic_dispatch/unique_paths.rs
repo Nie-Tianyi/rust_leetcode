@@ -4,10 +4,11 @@
 ///     - `dp[i][j] = dp[i-1][j] + dp[i][j-1]`
 /// 3. 机器人走到自己原点只有一种走法：`dp[0][0] = 1`
 /// 4. 按照从左到右，从上到下的顺序遍历
-
+#[allow(dead_code)]
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn unique_paths(m: i32, n: i32) -> i32 {
         let m = m as usize;
         let n = n as usize;
