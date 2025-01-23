@@ -1,13 +1,13 @@
 struct Solution;
 
 impl Solution {
-    #[allow(unreachable_code)]
+    #[allow(unreachable_code, dead_code)]
     pub fn is_match(s: String, p: String) -> bool {
         let patterns = Pattern::pattern_lexical_analysis(p);
         let mut chars = s.chars().peekable();
-        let mut patterns = patterns.iter();
+        let patterns = patterns.iter();
 
-        while let Some(ptrn) = patterns.next() {
+        for ptrn in patterns {
             // 按照模式挨个去匹配字符串
             match ptrn {
                 Pattern::SingleChar(c) => {
@@ -38,7 +38,7 @@ impl Solution {
             }
         }
         // 如果所有模式都匹配完了，chars还有剩余，则返回false
-        if chars.next() != None {
+        if chars.next().is_some() {
             return false;
         }
 
