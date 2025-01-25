@@ -43,9 +43,7 @@ fn converter(mut res_vec: Vec<i32>, flag: Flag) -> i32 {
                 if y.is_none() {
                     return i32::MAX;
                 }
-                res = res
-                    .checked_add(y.unwrap())
-                    .unwrap_or(i32::MAX);
+                res = res.checked_add(y.unwrap()).unwrap_or(i32::MAX);
             }
         }
         Flag::Negative => {
