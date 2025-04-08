@@ -15,3 +15,6 @@ mod reverse_linked_list_by_k_group;
 mod sum_of_two_numbers;
 mod trapping_rain_water;
 mod z_converter;
+mod two_sum;
+mod container_with_most_water;
+mod integer_to_roman;
