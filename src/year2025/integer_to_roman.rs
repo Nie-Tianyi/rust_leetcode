@@ -2,7 +2,7 @@ struct Solution;
 
 impl Solution {
     pub fn int_to_roman(num: i32) -> String {
-        match num { 
+        match num {
             1 => "I".to_string(),
             2..4 => String::from("I") + Self::int_to_roman(num - 1).as_str(),
             4 => "IV".to_string(),
@@ -12,7 +12,7 @@ impl Solution {
             10 => "X".to_string(),
             11..40 => String::from("X") + Self::int_to_roman(num - 10).as_str(),
             40 => "XL".to_string(),
-            41 .. 50 => String::from("XL") + Self::int_to_roman(num - 40).as_str(),
+            41..50 => String::from("XL") + Self::int_to_roman(num - 40).as_str(),
             50 => "L".to_string(),
             51..90 => String::from("L") + Self::int_to_roman(num - 50).as_str(),
             90 => "XC".to_string(),
@@ -27,7 +27,7 @@ impl Solution {
             901..1000 => String::from("CM") + Self::int_to_roman(num - 900).as_str(),
             1000 => "M".to_string(),
             1001..4000 => String::from("M") + Self::int_to_roman(num - 1000).as_str(),
-            _ => panic!("unidentified number")
+            _ => panic!("unidentified number"),
         }
     }
 }
