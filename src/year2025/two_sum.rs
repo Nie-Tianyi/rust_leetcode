@@ -1,6 +1,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(unused)]
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         for (i1, n) in nums.iter().enumerate() {
             let m = target - n;

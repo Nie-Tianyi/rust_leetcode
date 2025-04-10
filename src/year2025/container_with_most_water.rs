@@ -1,6 +1,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(unused)]
     pub fn max_area(height: Vec<i32>) -> i32 {
         let (mut l, mut r) = (0, height.len() - 1);
         let mut max_area = 0;

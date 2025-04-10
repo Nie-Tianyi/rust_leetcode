@@ -1,6 +1,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(unused)]
     pub fn int_to_roman(num: i32) -> String {
         match num {
             1 => "I".to_string(),
