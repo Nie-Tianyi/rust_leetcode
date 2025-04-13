@@ -3,3 +3,4 @@ mod integer_to_roman;
 mod longest_common_prefix;
 mod roman_to_integer;
 mod two_sum;
+mod three_sum;
