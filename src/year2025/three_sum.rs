@@ -16,7 +16,7 @@ impl Solution {
         let len = sorted_nums.len();
         'outer: for x in 0..len - 2 {
             //跳过重复的第一个元素
-            if x >=1 && sorted_nums[x] == sorted_nums[x - 1] {
+            if x >= 1 && sorted_nums[x] == sorted_nums[x - 1] {
                 continue 'outer;
             }
 
