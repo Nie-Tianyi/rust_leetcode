@@ -7,3 +7,5 @@ mod three_sum;
 mod three_sum_closest;
 mod to_camel_case;
 mod two_sum;
+mod four_sum;
+mod remove_nth_from_end;
