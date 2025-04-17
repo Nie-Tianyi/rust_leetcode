@@ -1,3 +1,4 @@
+#[allow(unused)]
 fn to_camel_case(text: &str) -> String {
     let mut start_of_a_word = false;
     let mut res = String::new();
