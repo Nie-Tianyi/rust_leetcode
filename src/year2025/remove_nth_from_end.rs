@@ -45,34 +45,14 @@ fn count_length(head: &Option<Box<ListNode>>) -> i32 {
 
 #[cfg(test)]
 mod tests {
-    use crate::year2025::remove_nth_from_end::{ListNode, Solution};
+    use super::*;
+    use crate::linked_list;
 
     #[test]
     fn test() {
-        let test_list = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: Some(Box::new(ListNode {
-                        val: 4,
-                        next: Some(Box::new(ListNode { val: 5, next: None })),
-                    })),
-                })),
-            })),
-        }));
+        let test_list = linked_list![1, 2, 3, 4, 5];
 
-        let expected = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: Some(Box::new(ListNode { val: 5, next: None })),
-                })),
-            })),
-        }));
+        let expected = linked_list![1, 2, 3, 5];
 
         let ans = Solution::remove_nth_from_end(test_list, 2);
         assert_eq!(ans, expected)

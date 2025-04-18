@@ -14,6 +14,7 @@ impl ListNode {
 }
 
 #[allow(unused_macros)]
+#[macro_export]
 macro_rules! linked_list {
     // 处理空链表的情况
     () => {
@@ -27,4 +28,3 @@ macro_rules! linked_list {
         }))
     };
 }
-
