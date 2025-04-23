@@ -11,3 +11,4 @@ mod three_sum_closest;
 mod to_camel_case;
 mod two_sum;
 mod valid_parentheses;
+mod generate_parentheses;

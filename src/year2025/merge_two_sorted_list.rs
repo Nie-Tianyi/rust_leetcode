@@ -59,6 +59,7 @@ impl Solution {
 
 struct Solution2;
 impl Solution2 {
+    #[allow(unused)]
     pub fn merge_two_lists(
         list1: Option<Box<ListNode>>,
         list2: Option<Box<ListNode>>,
