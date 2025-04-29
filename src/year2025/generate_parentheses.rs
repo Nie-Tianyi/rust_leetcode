@@ -4,7 +4,7 @@ impl Solution {
     #[allow(unused)]
     pub fn generate_parenthesis(n: i32) -> Vec<String> {
         let n = n as usize;
-        let mut dp = vec![vec![];n+1];
+        let mut dp = vec![vec![]; n + 1];
         for i in 0..=n {
             if i == 0 {
                 dp[i] = vec!["".to_string()];
@@ -14,7 +14,7 @@ impl Solution {
                 dp[i] = vec!["()".to_string()];
                 continue;
             }
-            
+
             let (left, right) = dp.split_at_mut(i);
             for j in 0..i {
                 // combine j i-j
@@ -54,7 +54,7 @@ mod tests {
     fn test_1() {
         do_test(
             Solution::generate_parenthesis(3),
-            vec!["((()))", "(()())", "(())()", "()(())", "()()()"]
+            vec!["((()))", "(()())", "(())()", "()(())", "()()()"],
         )
     }
 

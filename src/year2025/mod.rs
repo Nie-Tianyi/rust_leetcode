@@ -1,14 +1,16 @@
 mod container_with_most_water;
 mod four_sum;
+mod generate_parentheses;
 mod integer_to_roman;
 mod letter_combinations;
 mod longest_common_prefix;
+mod merge_k_lists;
 mod merge_two_sorted_list;
 mod remove_nth_from_end;
 mod roman_to_integer;
+mod swap_nodes_in_pairs;
 mod three_sum;
 mod three_sum_closest;
 mod to_camel_case;
 mod two_sum;
 mod valid_parentheses;
-mod generate_parentheses;
