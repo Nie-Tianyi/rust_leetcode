@@ -6,10 +6,10 @@ impl Solution {
     #[allow(unused)]
     pub fn reverse_k_group(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
         let mut head = head;
-        let mut result: Option<Box<ListNode>> = None; 
+        let mut result: Option<Box<ListNode>> = None;
         let mut curr = &mut result;
         let mut queue: Vec<Box<ListNode>> = Vec::new();
-        
+
         'outer: loop {
             for _ in 0..k {
                 if let Some(mut node) = head {
@@ -29,9 +29,8 @@ impl Solution {
                 curr = &mut curr.insert(queue.pop().unwrap()).next;
             }
         }
-        
+
         result
-        
     }
 }
 

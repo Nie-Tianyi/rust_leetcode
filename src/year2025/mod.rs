@@ -6,6 +6,8 @@ mod letter_combinations;
 mod longest_common_prefix;
 mod merge_k_lists;
 mod merge_two_sorted_list;
+mod remove_duplicates_from_sorted_array;
+mod remove_elements;
 mod remove_nth_from_end;
 mod reverse_node_in_k_group;
 mod roman_to_integer;
