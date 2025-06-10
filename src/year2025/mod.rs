@@ -17,3 +17,4 @@ mod three_sum_closest;
 mod to_camel_case;
 mod two_sum;
 mod valid_parentheses;
+mod index_of_first_occurrence;

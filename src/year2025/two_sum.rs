@@ -1,6 +1,8 @@
 struct Solution;
 
 impl Solution {
+    // 找到nums中两个数字，加起来等于target，返回两个数字的索引（以数组的形式）
+    // 如果找不到，则返回空数组
     #[allow(unused)]
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         for (i1, n) in nums.iter().enumerate() {
