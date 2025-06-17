@@ -5,19 +5,19 @@ impl Solution {
         if needle.len() > haystack.len() || haystack.is_empty() || needle.is_empty() {
             return -1;
         }
-        
+
         let haystack = haystack.into_bytes();
         let needle = needle.into_bytes();
-        
+
         for i in 0..haystack.len() {
             if haystack[i] == needle[0] {
                 let needle_len = needle.len();
                 if i + needle_len > haystack.len() {
-                    break
+                    break;
                 }
-                
+
                 if Self::is_identical(&haystack[i..i + needle_len], &needle) {
-                    return i as i32
+                    return i as i32;
                 }
             }
         }
@@ -28,9 +28,9 @@ impl Solution {
     #[inline(always)]
     fn is_identical(s1: &[u8], s2: &[u8]) -> bool {
         if s1.len() != s2.len() {
-            return false
+            return false;
         }
-        
+
         for (a, b) in s1.iter().zip(s2) {
             if a != b {
                 return false;
