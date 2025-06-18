@@ -1,6 +1,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(unused)]
     pub fn divide(dividend: i32, divisor: i32) -> i32 {
         if dividend == 0 {
             return 0;
