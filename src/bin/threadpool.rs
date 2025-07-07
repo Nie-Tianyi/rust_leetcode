@@ -35,7 +35,7 @@ impl Worker {
 
 struct ThreadPool {
     workers: Vec<Worker>,
-    sender: mpsc::Sender<Job>,
+    sender: Option<mpsc::Sender<Job>>,
 }
 
 impl ThreadPool {
@@ -50,19 +50,28 @@ impl ThreadPool {
             workers.push(Worker::new(i, receiver.clone()))
         }
 
-        Self { workers, sender }
+        Self {
+            workers,
+            sender: Some(sender),
+        }
     }
 
     fn execute<F>(&self, job: F)
     where
         F: FnOnce() + Send + 'static,
     {
-        self.sender.send(Box::new(job)).unwrap()
+        if let Some(sender) = &self.sender {
+            sender.send(Box::new(job)).unwrap()
+        } else {
+            panic!("ThreadPool has closed")
+        }
     }
 }
 
 impl Drop for ThreadPool {
     fn drop(&mut self) {
+        drop(self.sender.take());
+
         for worker in &mut self.workers {
             println!("shutting down worker {}", worker.id);
             if let Some(handle) = worker.join_handle.take() {
@@ -77,7 +86,7 @@ fn main() {
     let pool = ThreadPool::new(4);
 
     // 提交8个任务
-    for i in 0..8 {
+    for i in 0..80 {
         pool.execute(move || {
             println!("Task {i} started");
             thread::sleep(std::time::Duration::from_secs(1));
