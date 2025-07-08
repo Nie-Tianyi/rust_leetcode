@@ -14,16 +14,20 @@ struct Worker {
 impl Worker {
     fn new(id: usize, receiver: Arc<Mutex<Receiver<Job>>>) -> Self {
         let join_handle = thread::spawn(move || loop {
-            match receiver.lock().unwrap().recv() {
-                Ok(job) => {
-                    println!("Worker {id} executing job");
-                    job()
+            // 先获取锁，接收任务，然后马上释放锁
+            let job = {
+                let lock = receiver.lock().unwrap();
+                match lock.recv() {
+                    Ok(job) => job,
+                    Err(_) => {
+                        println!("Worker {id} disconnected; shutting down.");
+                        break;
+                    }
                 }
-                Err(_) => {
-                    println!("Worker {id} disconnected; shutting down.");
-                    break;
-                }
-            }
+            };
+
+            println!("Worker {id} executing job");
+            job()
         });
 
         Self {
@@ -86,15 +90,15 @@ fn main() {
     let pool = ThreadPool::new(4);
 
     // 提交8个任务
-    for i in 0..80 {
+    for i in 0..8 {
+        println!("Submitting task {i}");
         pool.execute(move || {
             println!("Task {i} started");
-            thread::sleep(std::time::Duration::from_secs(1));
+            thread::sleep(std::time::Duration::from_secs(10));
             println!("Task {i} finished");
         });
     }
 
     // 等待所有任务完成（当pool离开作用域时自动关闭）
     println!("All tasks submitted");
-    thread::sleep(std::time::Duration::from_secs(2));
 }
