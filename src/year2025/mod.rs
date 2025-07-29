@@ -8,6 +8,7 @@ mod letter_combinations;
 mod longest_common_prefix;
 mod merge_k_lists;
 mod merge_two_sorted_list;
+mod minimum_path_sum;
 mod pow;
 mod remove_duplicates_from_sorted_array;
 mod remove_elements;
