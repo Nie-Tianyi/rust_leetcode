@@ -1,5 +1,6 @@
 struct Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn str_str(haystack: String, needle: String) -> i32 {
         if needle.len() > haystack.len() || haystack.is_empty() || needle.is_empty() {
