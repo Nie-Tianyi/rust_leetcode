@@ -4,6 +4,7 @@ mod four_sum;
 mod generate_parentheses;
 mod index_of_first_occurrence;
 mod integer_to_roman;
+mod largest_number;
 mod letter_combinations;
 mod longest_common_prefix;
 mod merge_k_lists;
