@@ -11,26 +11,26 @@ impl Solution {
 
         let mut res = nums.concat();
 
-        remove_leading_zeros(&mut res);
+        trim_leading_zeros(&mut res);
 
         res
     }
 }
 
-fn remove_leading_zeros(s: &mut String) {
+fn trim_leading_zeros(s: &mut String) {
     while s.starts_with("0") && s.len() > 1 {
-        s.drain(..1);   
+        s.drain(..1);
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use super::{remove_leading_zeros, Solution};
+    use super::{trim_leading_zeros, Solution};
 
     #[test]
     fn test_remove() {
         let mut s = String::from("0001");
-        remove_leading_zeros(&mut s);
+        trim_leading_zeros(&mut s);
         println!("{s}")
     }
 
