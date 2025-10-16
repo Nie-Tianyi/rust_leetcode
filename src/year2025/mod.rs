@@ -17,6 +17,7 @@ mod remove_elements;
 mod remove_nth_from_end;
 mod reverse_node_in_k_group;
 mod roman_to_integer;
+mod search_in_rotated_sorted_array;
 mod swap_nodes_in_pairs;
 mod three_sum;
 mod three_sum_closest;
