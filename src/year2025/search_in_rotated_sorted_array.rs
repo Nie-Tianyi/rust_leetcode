@@ -1,6 +1,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(unused)]
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
         match subsearch(&nums[..], target) {
             Some(index) => index as i32,
